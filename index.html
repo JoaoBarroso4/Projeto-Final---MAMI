@@ -14,9 +14,24 @@
     <meta charset="utf-8" />
   </head>
   <body>
-    <main></main>
-    <canvas id="chartCanvas"></canvas>
-
+    <main>
+      <div class="title">
+        <h1>Calculadora Gráfica - Projeto Final de MAMI</h1>
+      </div>
+      <div class="input">
+        <input
+          type="text"
+          name="function"
+          id="function"
+          placeholder="Digite aqui a função que deseja ter o gráfico desenhado..."
+        />
+        <input type="submit" value="Plotar">
+      </div>
+      <canvas id="chartCanvas"></canvas>
+      <div class="creditos">
+        <p>Desenvolvido por João Marcos Moura - 2023.2.</p>
+      </div>
+    </main>
     <script src="src/sketch.js"></script>
     <script src="src/data-handling.js"></script>
     <script src="src/graph.js"></script>
