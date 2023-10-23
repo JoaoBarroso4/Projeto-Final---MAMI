@@ -19,13 +19,15 @@
         <h1>Calculadora Gráfica - Projeto Final de MAMI</h1>
       </div>
       <div class="input">
-        <input
-          type="text"
-          name="function"
-          id="function"
-          placeholder="Digite aqui a função que deseja ter o gráfico desenhado..."
-        />
-        <input type="submit" value="Plotar">
+        <form onsubmit="plotGraph(event)">
+          <input
+            type="text"
+            name="function"
+            id="function"
+            placeholder="Digite aqui a função que deseja ter o gráfico desenhado..."
+          />
+          <input type="submit" value="Plotar" />
+        </form>
       </div>
       <canvas id="chartCanvas"></canvas>
       <div class="creditos">
