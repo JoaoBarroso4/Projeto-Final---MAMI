@@ -20,12 +20,34 @@
       </div>
       <div class="input">
         <form onsubmit="plotGraph(event)">
-          <input
-            type="text"
-            name="function"
-            id="function"
-            placeholder="Digite aqui a função que deseja ter o gráfico desenhado..."
-          />
+          <div class="text-inputs">
+            <input
+              type="text"
+              name="function"
+              id="function"
+              placeholder="Digite aqui a função que deseja ter o gráfico desenhado..."
+            />
+            <div class="flex-row">
+              <input
+                type="text"
+                name="xMin"
+                id="xMin"
+                placeholder="Digite aqui o valor mínimo de x..."
+              />
+              <input
+                type="text"
+                name="xMax"
+                id="xMax"
+                placeholder="Digite aqui o valor máximo de x..."
+              />
+              <input
+                type="text"
+                name="step"
+                id="step"
+                placeholder="Digite aqui o step..."
+              />
+            </div>
+          </div>
           <input type="submit" value="Plotar" />
         </form>
       </div>

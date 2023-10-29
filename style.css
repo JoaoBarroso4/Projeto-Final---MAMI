@@ -21,7 +21,7 @@ main {
 .title {
   text-align: center;
   font-size: 5rem;
-  margin: 2rem 0 0 0;
+  margin: 2rem 0 2rem 0;
   padding: 1rem;
   font-weight: 700;
 }
@@ -38,7 +38,6 @@ input {
   padding: 1.2rem 2rem;
   font-size: 2rem;
   font-weight: 400;
-  margin: 2rem 0;
 }
 
 .input form {
@@ -47,25 +46,37 @@ input {
   width: 100%;
 }
 
-input[id="function"] {
+input[id="function"],
+input[id="xMin"],
+input[id="xMax"],
+input[id="step"] {
   flex-grow: 3;
   color: rgba(32, 32, 32, 0.7);
   background-color: rgba(201, 201, 201, 1);
   margin-left: 3.1rem;
 }
 
-input[id="function"]:focus {
+input[id="function"]:focus,
+input[id="xMin"]:focus,
+input[id="xMax"]:focus,
+input[id="step"]:focus {
   outline: none;
 }
 
+input[id="xMin"],
+input[id="xMax"],
+input[id="step"] {
+  margin: 1.5rem 0 0 3.1rem;
+  font-size: 1.5rem;
+}
+
 input[type="submit"] {
-  flex-grow: 0.5;
+  flex-grow: 2;
   background-color: rgba(97, 97, 97, 0.8);
   color: rgba(241, 241, 241, 1);
   cursor: pointer;
-  margin-left: 2rem;
-  margin-right: 3.1rem;
-  padding: 1rem 0;
+  margin: 1rem 3.1rem 1rem 2rem;
+  padding: 2rem;
 }
 
 input[type="submit"]:hover {
@@ -79,4 +90,15 @@ input[type="submit"]:hover {
   padding: 1rem;
   font-weight: 400;
   color: rgba(32, 32, 32, 0.7);
+}
+
+.text-inputs {
+  display: flex;
+  flex-direction: column;
+  width: 100%;
+}
+
+.flex-row {
+  display: flex;
+  flex-direction: row;
 }
