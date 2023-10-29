@@ -1,6 +1,6 @@
 let chart;
 let chartCanvas;
-let functionInput;
+let functionInput, xMinInput, xMaxInput, stepInput;
 
 function setup() {
   chartCanvas = createCanvas(400, 400);

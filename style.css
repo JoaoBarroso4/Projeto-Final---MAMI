@@ -4,6 +4,7 @@
   box-sizing: border-box;
   font-family: "Roboto", sans-serif;
   font-size: 62.5%; /* 1 rem = 10px */
+  background-color: rgba(255, 255, 255, 1);
 }
 
 canvas {
@@ -27,8 +28,6 @@ main {
 }
 
 #chartCanvas {
-  height: 100%;
-  width: 100%;
   padding: 0 3rem;
 }
 
@@ -36,7 +35,7 @@ input {
   border: none;
   border-radius: 1rem;
   padding: 1.2rem 2rem;
-  font-size: 2rem;
+  font-size: 1.8rem;
   font-weight: 400;
 }
 
@@ -101,4 +100,8 @@ input[type="submit"]:hover {
 .flex-row {
   display: flex;
   flex-direction: row;
+}
+
+.input{
+  margin-bottom: 5rem;
 }

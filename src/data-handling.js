@@ -1,5 +1,6 @@
 function generateChartData(expression) {
-  let labels = Array.from({ length: 21 }, (_, i) => i * 5 - 50);
+  const length = Math.ceil((xMaxInput - xMinInput) / stepInput) + 1;
+  let labels = Array.from({ length }, (_, i) => i * stepInput + xMinInput);
   let values = labels.map((x) => evaluateExpression(expression, x));
 
   const filtraComplexos = (_, index) => {
