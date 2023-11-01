@@ -7,7 +7,7 @@ function plotGraph(event) {
   stepInput = Number(document.getElementById("step").value) || 5;
 
   if (!functionInput) {
-    console.log("Por favor, informe uma função válida.");
+    alert("Por favor, informe uma função válida.");
     return;
   }
 
@@ -32,12 +32,53 @@ function plotGraph(event) {
     options: {
       animation: false,
       responsive: true,
-      maintainAspectRatio: false,
+      maintainAspectRatio: true,
+      scales: scales,
       plugins: {
         legend: {
           display: false,
         },
+        zoom: zoomOptions,
       },
     },
   });
 }
+
+const zoomOptions = {
+  zoom: {
+    wheel: {
+      enabled: true,
+    },
+    pinch: {
+      enabled: true,
+    },
+    mode: "y",
+    onZoomComplete({ chart }) {
+      chart.update("none");
+    },
+  },
+  pan: {
+    enabled: true,
+    mode: "xy",
+  },
+};
+
+const scales = {
+  x: {
+    display: true,
+    min: xMinInput,
+    max: xMaxInput,
+    ticks: {
+      stepSize: stepInput,
+    },
+    grid: {
+      color: "rgba(0, 0, 0, 1)",
+    },
+  },
+  y: {
+    display: true,
+    grid: {
+      color: "rgba(0, 0, 0, 1)",
+    },
+  },
+};

@@ -1,5 +1,4 @@
-let chart;
-let chartCanvas;
+let chart, chartCanvas;
 let functionInput, xMinInput, xMaxInput, stepInput;
 
 function setup() {
