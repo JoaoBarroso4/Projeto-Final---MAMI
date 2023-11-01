@@ -52,9 +52,14 @@ const zoomOptions = {
     pinch: {
       enabled: true,
     },
-    mode: "y",
-    onZoomComplete({ chart }) {
-      chart.update("none");
+    mode: "xy",
+    onZoom({ chart }) {
+      const zoomScale = chart.getZoomLevel();
+      if (zoomScale < 1) {
+        chart.scales.x.min = originalXAxisConfig.min;
+        chart.scales.x.max = originalXAxisConfig.max;
+        chart.scales.x.ticks.stepSize = originalXAxisConfig.ticks.stepSize;
+      }
     },
   },
   pan: {
@@ -80,5 +85,13 @@ const scales = {
     grid: {
       color: "rgba(0, 0, 0, 1)",
     },
+  },
+};
+
+let originalXAxisConfig = {
+  min: xMinInput,
+  max: xMaxInput,
+  ticks: {
+    stepSize: stepInput,
   },
 };
