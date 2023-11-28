@@ -1,9 +1,9 @@
-function plotGraph(event) {
+async function plotGraph(event) {
   event.preventDefault();
 
   functionInput = document.getElementById("function").value;
-  xMaxInput = Number(document.getElementById("xMax").value) || 50;
-  xMinInput = Number(document.getElementById("xMin").value) || -50;
+  xMaxInput = Number(document.getElementById("xMax").value) || 200;
+  xMinInput = Number(document.getElementById("xMin").value) || -200;
   stepInput = Number(document.getElementById("step").value) || 5;
 
   if (!functionInput) {
@@ -17,7 +17,7 @@ function plotGraph(event) {
   }
 
   const ctx = document.getElementById("chartCanvas").getContext("2d");
-  chart = new Chart(ctx, {
+  chart = await new Chart(ctx, {
     type: "line",
     data: {
       labels: data.labels,

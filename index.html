@@ -9,6 +9,7 @@
     <script src="https://cdnjs.cloudflare.com/ajax/libs/hammer.js/2.0.8/hammer.min.js"></script>
 
     <script src="https://cdnjs.cloudflare.com/ajax/libs/mathjs/11.11.2/math.min.js"></script>
+
     <link rel="stylesheet" type="text/css" href="style.css" />
     <meta charset="utf-8" />
   </head>
@@ -17,8 +18,25 @@
       <div class="title">
         <h1>Calculadora Gráfica - Projeto Final de MAMI</h1>
       </div>
+      <div class="instrucoes">
+        <ul>
+          <li>
+            Este programa permite apenas a plotagem de gráficos de funções com
+            uma única variável, sendo esta <i>x</i>.
+          </li>
+          <li>
+            Para plotar o gráfico da função, a notação <i>f(x)</i> ou
+            equivalente deve ser substituída por apenas <i>y</i>.
+          </li>
+          <li>
+            É possível fazer uso dos templates de funções matemáticas
+            (logaritmo, divisão, radiciação, etc.) utilizando o teclado de
+            botões abaixo de onde a função é dada como entrada.
+          </li>
+        </ul>
+      </div>
       <div class="input">
-        <form onsubmit="plotGraph(event)">
+        <form onsubmit="plotGraph(event)" id="form">
           <div class="text-inputs">
             <input
               type="text"
@@ -46,11 +64,79 @@
                 placeholder="Digite aqui o step..."
               />
             </div>
+            <div class="formula-inputs">
+              <div class="formula-item">
+                <button type="button" value="(a) / (b)">
+                  <img src="assets/frac{a}{b}.svg" />
+                </button>
+              </div>
+              <div class="formula-item">
+                <button type="button" value="(a) ^ (b)">
+                  <img src="assets/a^b.svg" />
+                </button>
+              </div>
+              <div class="formula-item">
+                <button type="button" value="(a) ^ (1/(b))">
+                  <img src="assets/sqrt[b]{a}.svg" />
+                </button>
+              </div>
+              <div class="formula-item">
+                <button type="button" value="log(a, b)">
+                  <img src="assets/log_{b}{a}.svg" />
+                </button>
+              </div>
+              <div class="formula-item">
+                <button type="button" value="sin(a)">
+                  <img src="assets/sen(a).svg" />
+                </button>
+              </div>
+              <div class="formula-item">
+                <button type="button" value="cos(a)">
+                  <img src="assets/cos(a).svg" />
+                </button>
+              </div>
+              <div class="formula-item">
+                <button type="button" value="tan(a)">
+                  <img src="assets/tan(a).svg" />
+                </button>
+              </div>
+              <div class="formula-item">
+                <button type="button" value="cossec(a)">
+                  <img src="assets/cossec(a).svg" />
+                </button>
+              </div>
+              <div class="formula-item">
+                <button type="button" value="sec(a)">
+                  <img src="assets/sec(a).svg" />
+                </button>
+              </div>
+              <div class="formula-item">
+                <button type="button" value="cotan(a)">
+                  <img src="assets/cotan(a).svg" />
+                </button>
+              </div>
+            </div>
           </div>
           <input type="submit" value="Plotar" />
         </form>
       </div>
-      <canvas id="chartCanvas"></canvas>
+      <div class="grafico">
+        <div class="flex-row">
+          <div class="instrucoes zoom">
+            <p>Para dar zoom, utilize o scroll do mouse ou o gesto de pinça.</p>
+          </div>
+          <div class="reset-zoom">
+            <button
+              type="button"
+              id="reset-zoom-btn"
+              onclick="chart.resetZoom()"
+            >
+              Resetar zoom
+            </button>
+          </div>
+        </div>
+        <canvas id="chartCanvas"></canvas>
+      </div>
       <div class="creditos">
         <p>Desenvolvido por João Marcos Moura - 2023.2.</p>
       </div>
@@ -58,5 +144,6 @@
     <script src="src/sketch.js"></script>
     <script src="src/data-handling.js"></script>
     <script src="src/graph.js"></script>
+    <script src="src/formulas-layout.js"></script>
   </body>
 </html>
